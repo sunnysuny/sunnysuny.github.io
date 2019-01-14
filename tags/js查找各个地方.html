@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="妄越">
 <meta property="og:description" content="import urllib.requestimport urllib.parseimport json ab = input(‘请输入关键字’)cd = input(‘城市’) http://api.map.baidu.com/place/v2/suggestion?query=天安门&amp;amp;region=北京&amp;amp;city_limit=true&amp;amp;output=json&amp;amp;ak">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-14T05:50:04.776Z">
+<meta property="og:updated_time" content="2019-01-14T08:31:07.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tags">
 <meta name="twitter:description" content="import urllib.requestimport urllib.parseimport json ab = input(‘请输入关键字’)cd = input(‘城市’) http://api.map.baidu.com/place/v2/suggestion?query=天安门&amp;amp;region=北京&amp;amp;city_limit=true&amp;amp;output=json&amp;amp;ak">
@@ -267,14 +267,13 @@
       <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 6 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/npm/" style="font-size: 12px; color: #ccc">npm</a> <a href="/tags/基础/" style="font-size: 12px; color: #ccc">基础</a> <a href="/tags/文章/" style="font-size: 12px; color: #ccc">文章</a> <a href="/tags/橙/" style="font-size: 12px; color: #ccc">橙</a>
-            </div>
-          </div>
+          <p>import urllib.request<br>import urllib.parse<br>import json</p>
+<p>ab = input(‘请输入关键字’)<br>cd = input(‘城市’)</p>
+<h1 id="http-api-map-baidu-com-place-v2-suggestion-query-天安门-amp-region-北京-amp-city-limit-true-amp-output-json-amp-ak-你的ak-GET请求"><a href="#http-api-map-baidu-com-place-v2-suggestion-query-天安门-amp-region-北京-amp-city-limit-true-amp-output-json-amp-ak-你的ak-GET请求" class="headerlink" title="http://api.map.baidu.com/place/v2/suggestion?query=天安门&amp;region=北京&amp;city_limit=true&amp;output=json&amp;ak=你的ak //GET请求"></a><a href="http://api.map.baidu.com/place/v2/suggestion?query=天安门&amp;region=北京&amp;city_limit=true&amp;output=json&amp;ak=你的ak" target="_blank" rel="noopener">http://api.map.baidu.com/place/v2/suggestion?query=天安门&amp;region=北京&amp;city_limit=true&amp;output=json&amp;ak=你的ak</a> //GET请求</h1><p>args = {‘query’: ab, ‘region’: cd,  ‘output’: ‘json’,’ak’: ‘S2uzcu5og9j5h2tWPrBR9H0Fw8jiq9Wo’}<br>b64_args = urllib.parse.urlencode(args)<br>print(b64_args)<br>base_url = ‘<a href="http://api.map.baidu.com/place/v2/search&#39;" target="_blank" rel="noopener">http://api.map.baidu.com/place/v2/search&#39;</a><br>url = base_url + ‘?’ + b64_args</p>
+<p>resp = urllib.request.urlopen(url)<br>content_json = resp.read().decode()</p>
+<h1 id="json转对象"><a href="#json转对象" class="headerlink" title="json转对象"></a>json转对象</h1><p>content_obj = json.loads(content_json)</p>
+<p>results = content_obj[‘results’]<br>for row in results:<br>    print(row[‘name’], row[‘address’])</p>
+
         
       </div>
       
@@ -364,7 +363,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/js查找各个地方.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
