@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python应用,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="京东评论写数据库simport requestsimport jsonfrom lxml import etreeimport pymysql.cursorsimport time def get_comments(product_id=None, page=None, page_size=10):    “””    取评论    :return: [[id,username,score,],">
+<meta name="keywords" content="python应用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="京东爬取数据">
+<meta property="og:url" content="http://yoursite.com/2019/01/10/京东评论存入数据库/index.html">
+<meta property="og:site_name" content="妄越">
+<meta property="og:description" content="京东评论写数据库simport requestsimport jsonfrom lxml import etreeimport pymysql.cursorsimport time def get_comments(product_id=None, page=None, page_size=10):    “””    取评论    :return: [[id,username,score,],">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-14T08:37:11.398Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="京东爬取数据">
+<meta name="twitter:description" content="京东评论写数据库simport requestsimport jsonfrom lxml import etreeimport pymysql.cursorsimport time def get_comments(product_id=None, page=None, page_size=10):    “””    取评论    :return: [[id,username,score,],">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/10/京东评论存入数据库/">
+
+
+
+
+
+  <title>京东爬取数据 | 妄越</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">妄越</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/京东评论存入数据库/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="妄越">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yifenga.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="妄越">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">京东爬取数据</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-10T08:00:00+08:00">
+                2019-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="京东评论写数据库s"><a href="#京东评论写数据库s" class="headerlink" title="京东评论写数据库s"></a>京东评论写数据库s</h1><p>import requests<br>import json<br>from lxml import etree<br>import pymysql.cursors<br>import time</p>
+<p>def get_comments(product_id=None, page=None, page_size=10):<br>    “””<br>    取评论<br>    :return: [[id,username,score,], []]或 [{‘id’:123123, ‘username’: ‘zzdxyz’, ‘score’: 5}]<br>    “””<br>    comment_url = ‘<a href="https://sclub.jd.com/comment/productPageComments.action&#39;" target="_blank" rel="noopener">https://sclub.jd.com/comment/productPageComments.action&#39;</a></p>
+<pre><code>params = {
+    &apos;productId&apos;: product_id,  # 商品id。先写死 苹果手机。
+    &apos;score&apos;: 0,
+    &apos;sortType&apos;: 5,
+    &apos;page&apos;: page,
+    &apos;pageSize&apos;: page_size,
+    # &apos;callback&apos;: &apos;fetchJSON_comment98vv15261&apos;,
+    # &apos;isShadowSku&apos;: 0,
+    # &apos;fold&apos;: 1
+}
+
+# 伪造headers。 降低被封禁的概率。
+# cookie中有jsessionid和trackid和用户名等信息。referer请求前的页面地址。useragent浏览器标识。
+headers = {
+    &apos;cookie&apos;: &apos;shshshfpa=c5912ac8-f696-63a4-437d-20191204d1d8-1531666020; shshshfpb=01a876290501e22aca53c7218c89142ee978ad3d34afa32745b4ada524; pinId=uGywawhW5xQ; aud=c5a66c2779ef975e95c2e6bcd122076f; aud_ver=2; __jdu=15316322076781797028717; ipLocation=%u5317%u4EAC; ipLoc-djd=1-72-2799-0; avt=3; PCSYCityID=412; pin=zzdxyz; unick=%E7%BB%86%E8%BD%AF%E8%B7%91; _tp=EtAWqzuy%2FaNSh0LFcTfGgQ%3D%3D; _pst=zzdxyz; cn=0; user-key=bb1ddddd-6808-4a0a-9ef0-486272214fae; __jdc=122270672; TrackID=12_A_Uj3VhNwy96E08U546kjQ_OUDLBz9oe6SY1cKBy1gC5rvObnItC79-lh5xLhs1PpIIwwihGx4x848lXXJlC4IZxqw1EA3ZggiJZ6bX10; thor=1206B4BD372EF4F47D5ADB6E04093C1CF85E72A62CDA84A850575F6121C961C7920737265283260552283BC968C129ACF74176D4C8098D5A2F0F4FCB9EEB1943329E4CD3624DFB217BB4783B7FC6A054B9D577B323AFE4D0AC64F3456BB34D18C1441378FB2E314B30B0C41B982FD9C11F6993C370717B280220CBF466E16BF8; ceshi3.com=000; unpl=V2_ZzNtbUdfQhUlWxJdKx0OBmJREV9KV0QTd11CVH0dCAxlBBFfclRCFX0UR1RnGF4UZwIZXEZcRhZFCEdkexhdBGMBFFpHVnMldDhFVEsRbAVjARJaQFRAFHMPQF17H1QDZgAbW0JRcyVyOHYIP0AMQzkzElhEU0EQfAxDVEsYbAViBRpcR1VCFXA4DTp6VFwBZQMVX0FUQhNyDk9UfRFaBGQKFF1EZ0Ildg%3d%3d; __jda=122270672.15316322076781797028717.1531632208.1546481134.1546481144.36; __jdb=122270672.1.15316322076781797028717|36.1546481144; __jdv=122270672|dh.tbyuantu.com|t_1000537640_|tuiguang|4901abe8a5c24c2391673d5175e83623|1546481143668; shshshfp=66ae7625488a03ea74ef89c454100a41; shshshsID=3536f0e04a4e914beb2a3be569e1cb2d_1_1546481147922&apos;,
+    &apos;referer&apos;: &apos;https://item.jd.com/100000287113.html&apos;,
+    &apos;user-agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&apos;,
+}
+
+comment_resp = requests.get(url=comment_url, params=params, headers=headers)
+print(comment_resp.status_code)
+comment_str = comment_resp.text
+
+comment_dict = json.loads(comment_str)
+# comment_dict = json.load(&apos;4js接口-京东评论-评论数据.json&apos;)
+comments = comment_dict[&apos;comments&apos;]
+
+result_list = []
+for comment in comments:
+    result_list.append({
+        &apos;id&apos;: comment[&apos;id&apos;],
+        &apos;content&apos;: comment[&apos;content&apos;],
+        &apos;creation_time&apos;: comment[&apos;creationTime&apos;],
+        &apos;score&apos;: comment[&apos;score&apos;],
+        &apos;nickname&apos;: comment[&apos;nickname&apos;],
+        &apos;product_color&apos;: comment[&apos;productColor&apos;],
+        &apos;product_size&apos;: comment[&apos;productSize&apos;]
+    })
+
+return result_list
+</code></pre><p>def save_db(comments):<br>    “””<br>    :param: comments: {list} [{‘id’:123123, ‘content’:’物美价廉东西不错’, },{}]<br>    :return: affected_rows : {int} 成功写入的行数<br>    “””<br>    connection = pymysql.connect(host=’127.0.0.1’, port=3306,<br>                                 user=’root’,<br>                                 password=’dadong’,<br>                                 db=’jd’,<br>                                 charset=’utf8mb4’, cursorclass=pymysql.cursors.DictCursor<br>                                 )<br>    affected_rows = 0  # 成功计数</p>
+<pre><code>for comment in comments:  # 循环评论
+    cursor = connection.cursor()  # 创建游标
+    # 先判断一下是否已存储过
+    sql1 = &quot;select id from comment where comment_id=%s &quot; % (comment[&apos;id&apos;])
+    cursor.execute(sql1)
+    rs_set = cursor.fetchone()  # 有值返回{&apos;id&apos;:23} 无值返回None
+    if rs_set:
+        print(&apos;这条评论已存在在数据库中&apos;)
+        continue
+    # 不存在的写入数据库
+    # 写法一： 参数为列表或元组  占位符 %s
+    # sql2 = &quot;&quot;&quot;
+    # insert into comment (comment_id, content, creation_time, score, nickname, product_color, product_size)
+    # values (%s, %s, %s, %s, %s,   %s, %s,)
+    # &quot;&quot;&quot;
+    # 注意不要在拼sql的时候通过python字符串格式化（% .formate f&apos;&apos;）传参，应该cursor.execute(args=)传参。
+    # cursor.execute(sql2, args=(comment[&apos;id&apos;], comment[&apos;content&apos;], ...))     # 参数为列表或元组
+
+    # 写法二：参数为字典
+    sql2 = &quot;&quot;&quot;
+    insert into comment (comment_id, content, creation_time, score, nickname, product_color, product_size)
+     values (%(id)s, %(content)s, %(creation_time)s, %(score)s, %(nickname)s,   %(product_color)s, %(product_size)s)
+    &quot;&quot;&quot;
+    affected_row = cursor.execute(sql2, args=comment)
+    if affected_row:
+        print(&apos;本条评论插入成功&apos;)
+        affected_rows += affected_row
+
+    # 写法三：批量插入，拼sql
+    # 写法四：批量插入，用现成方法executemany
+connection.commit()
+return affected_rows
+</code></pre><p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    product_id = 100000287113  # 先写死，固定为一个商品下的评论<br>    page_amount = 10  # 爬取总页数，注意不要传给get_comments()函数导致每次请求固定的一页<br>    page_size = 10  # 每页10条评论<br>    time_sleep = 2</p>
+<pre><code>for page in range(0, page_amount):
+    comments_list = get_comments(product_id, page, page_size)
+    affected_rows = save_db(comments=comments_list)
+    print(f&apos;成功写入{affected_rows}&apos;)
+    time.sleep(2)
+
+print(&apos;Done&apos;)
+</code></pre><p>“””<br>报错：</p>
+<ol>
+<li>id int默认4字节太短  应该bigint</li>
+<li>content中有单引号导致拼出的sql错误，应该在cursor.excute<br>sql = ‘insert into comment (comment_id, content) values (%s, %s);’ % (111232, ‘物美价廉’)<br>sql = ‘insert into comment (comment_id, content) values ({}, {});’.format(111232, ‘这个商品’太好’了！’)<br>‘insert into comment (comment_id, content) values (111232, ‘这个商品’太好’了！’);’导致报错<br>cursor.execute(sql)<br>所以参数应该在cursor.execute(sql, args=(111232, ‘这个商品’太好’了！’))</li>
+<li>indent error 缩进错误。  怀疑sql三引号中有一个空格，换行后变为5个空格。<br>“””</li>
+</ol>
+<p>“””<br>批量插入：<br>手动拼sql<br>1.insert into comment(comment_id,content) values(111232,’这个商品太好了’),<br>                                              (11233,’不错’),(11233,’真好’);<br>sql = ‘insert into comment (comment_id,content) values’<br>for comment in comments:<br>    sql += ‘(‘<br>    sql += comment[‘id’]<br>    sql +=comment[‘content’]<br>    sql += ‘)’<br>    sql += ‘,’<br>cursor.excute(sql)<br>2.手动拼写比较麻烦容易出错，所以用现成的cursor.excutemany()<br>sql = ‘insert into comment comment_id,<br>“””</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python应用/" rel="tag"># python应用</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/09/判断中英文/" rel="next" title="python">
+                <i class="fa fa-chevron-left"></i> python
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/11/自动售货机/" rel="prev" title="自动售货机">
+                自动售货机 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/yifenga.jpg" alt="妄越">
+            
+              <p class="site-author-name" itemprop="name">妄越</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/5242864736/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#京东评论写数据库s"><span class="nav-number">1.</span> <span class="nav-text">京东评论写数据库s</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">妄越</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+  
+</body>
+</html>
