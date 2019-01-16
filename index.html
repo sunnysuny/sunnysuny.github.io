@@ -255,6 +255,133 @@
   
   
 
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/scrapy-你知道吗/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="妄越">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yifenga.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="妄越">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/16/scrapy-你知道吗/" itemprop="url">scrapy 你知道吗 </a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T10:06:53+08:00">
+                2019-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h1><p>scrapy是一个流行的爬虫框架。架构分层，适合复杂项目并易于扩展。封装异步包，实现并发请求和分布式部署</p>
+<h3 id="框架架构介绍"><a href="#框架架构介绍" class="headerlink" title="框架架构介绍"></a>框架架构介绍</h3><p>类似L45封装/baike_spider 项目，将爬虫项目分为几个更能层次</p>
+<p>-引擎（scrapy engine)<br>处理整个系统的数据流，触发事物<br>-调度器(scheduler)<br>接收引擎发过来的请求，压入队列，去重，决定下一次请求的url<br>-下载器（downloader)<br>根据url请求网页，下载网页原始内容，并将网页内容返回给spiders (基于twisted,异步请求)</p>
+<p>-爬虫(spiders)<br>从网页信息中提取实体信息，返回单个实体item<br>也可以提取链接供之后爬取<br>-管道（pipeline)<br>接收单个实体item,好像生长线一样进行加工<br>验证item是否有效，持久化数据（写csv或数据库）</p>
+<p>-下载中间件，爬虫中间件，调度中间件(middle)<br>上述主要模块无法满足的更细化或更前置的需求。例如django也有中间件，<br>需求：用户进入视图函数前新建数据库链接，验证用户 sessionid,请求后要销毁数据库链接</p>
+<p>##运行流程<br>1.引擎从调度器里去一个url接待器<br>2.引擎接收到后封装为一个请求，交给下载器<br>2.下载器请求网页，返回response<br>4.爬虫解析response得到实体item<br>5.item交给管道进行处理</p>
+<h3 id="安装scrapy"><a href="#安装scrapy" class="headerlink" title="安装scrapy"></a>安装scrapy</h3><p>scrapy依赖包比较多，有些包用c写的需要vc编译器</p>
+<p>方法一： anacnda 自带上千种编译好的科学计算相关包。优点：自带编译后的scrapy<br>缺点：体积大，下载包300M,安装一个多G,大多数包用不上，flask django又没有需要新下。<br>miniconda是anaconda的精简版本。版本有限，缺少.net会导致报错失败。<br>方法二： pip install scrapy 哪些报错需要vc编译器的，再单独去发布编译后的包的<br>网站下载对应平台编译后的.whl文件安装<br>参考链接： 第三编译后包的网站<br>2.图文</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
   <article class="post post-type-python" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1128,7 +1255,7 @@ else:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1150,7 +1277,7 @@ else:
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
