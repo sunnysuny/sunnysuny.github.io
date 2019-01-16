@@ -305,6 +305,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/16/scrapy-你知道吗/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/16/scrapy-你知道吗/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -454,6 +464,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/14/json查找所有地方/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/14/json查找所有地方/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -601,6 +621,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/11/等你下课/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/11/等你下课/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -744,6 +774,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/11/自动售货机/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/11/自动售货机/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -885,6 +925,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/10/京东评论存入数据库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/10/京东评论存入数据库/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1095,6 +1145,16 @@ print(&apos;Done&apos;)
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/09/判断中英文/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/09/判断中英文/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1297,15 +1357,21 @@ else:
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                    <a href="https://www.jianshu.com/u/09f87106922a" target="_blank" title="简书">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-jianshu"></i>简书</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://weibo.com/5242864736/profile?topnav=1&wvr=6" target="_blank" title="微博">
                       
                         <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mp.csdn.net/" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-csdn"></i>CSDN</a>
                   </span>
                 
             </div>
@@ -1513,6 +1579,28 @@ else:
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'c2xuuHW7ilROcGBmopx22q1U-gzGzoHsz',
+        appKey: 'IoQEO2vXLNQBb0mU2EqzU27U',
+        placeholder: '你来我很高兴',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

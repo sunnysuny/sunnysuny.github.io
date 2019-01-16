@@ -290,6 +290,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -381,15 +384,21 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                    <a href="https://www.jianshu.com/u/09f87106922a" target="_blank" title="简书">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-jianshu"></i>简书</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://weibo.com/5242864736/profile?topnav=1&wvr=6" target="_blank" title="微博">
                       
                         <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mp.csdn.net/" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-csdn"></i>CSDN</a>
                   </span>
                 
             </div>
@@ -617,6 +626,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'c2xuuHW7ilROcGBmopx22q1U-gzGzoHsz',
+        appKey: 'IoQEO2vXLNQBb0mU2EqzU27U',
+        placeholder: '你来我很高兴',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
