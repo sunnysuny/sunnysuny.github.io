@@ -2055,7 +2055,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff03;
+  background: #c7e240;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3405,7 +3405,7 @@ img:hover {
 }
 #days {
   display: block;
-  color: #fbf;
+  color: #eeaeee;
   font-size: 13px;
   margin-top: 15px;
 }
