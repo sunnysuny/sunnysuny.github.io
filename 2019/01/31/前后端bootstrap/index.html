@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="python,">
 
 
 
@@ -78,17 +78,18 @@
 
 
 
-<meta name="description" content="镜像的准备工作 apt更新源修改源 vim /etc/apt/sources.list更新源 apt-get update升级已安装的包 apt-get upgrade搜索 apt-cache search packagename安装 apt-get install packagename git mysql  注意记住密码 安全组放通端口 修改python软连接  初步测试运行（自带单线程） 本">
+<meta name="description" content="bootstrap之前已经学过css。css语法属性非常多，实现麻烦，效果一般。bootstrap是css封装的一套的ui框架，实现设计定义好了css样式，通过class方便引入。只需了解部分bootstrap class，就能开发出漂亮的前端界面，网上也有大量的模板直接修改。 下载版本选择  生产环境  去除空格的bs代码    bootstrap.min.css（生产） 源码    包含源码、">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装基础环境和初测项目">
-<meta property="og:url" content="https://github.com/sunnysuny/sunnysuny.github.io/2019/01/29/安装基础环境和初测项目/index.html">
+<meta property="og:title" content="前端 bootstrap">
+<meta property="og:url" content="https://github.com/sunnysuny/sunnysuny.github.io/2019/01/31/前后端bootstrap/index.html">
 <meta property="og:site_name" content="妄越">
-<meta property="og:description" content="镜像的准备工作 apt更新源修改源 vim /etc/apt/sources.list更新源 apt-get update升级已安装的包 apt-get upgrade搜索 apt-cache search packagename安装 apt-get install packagename git mysql  注意记住密码 安全组放通端口 修改python软连接  初步测试运行（自带单线程） 本">
+<meta property="og:description" content="bootstrap之前已经学过css。css语法属性非常多，实现麻烦，效果一般。bootstrap是css封装的一套的ui框架，实现设计定义好了css样式，通过class方便引入。只需了解部分bootstrap class，就能开发出漂亮的前端界面，网上也有大量的模板直接修改。 下载版本选择  生产环境  去除空格的bs代码    bootstrap.min.css（生产） 源码    包含源码、">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-29T12:06:31.814Z">
+<meta property="og:updated_time" content="2019-01-31T12:38:13.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装基础环境和初测项目">
-<meta name="twitter:description" content="镜像的准备工作 apt更新源修改源 vim /etc/apt/sources.list更新源 apt-get update升级已安装的包 apt-get upgrade搜索 apt-cache search packagename安装 apt-get install packagename git mysql  注意记住密码 安全组放通端口 修改python软连接  初步测试运行（自带单线程） 本">
+<meta name="twitter:title" content="前端 bootstrap">
+<meta name="twitter:description" content="bootstrap之前已经学过css。css语法属性非常多，实现麻烦，效果一般。bootstrap是css封装的一套的ui框架，实现设计定义好了css样式，通过class方便引入。只需了解部分bootstrap class，就能开发出漂亮的前端界面，网上也有大量的模板直接修改。 下载版本选择  生产环境  去除空格的bs代码    bootstrap.min.css（生产） 源码    包含源码、">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/sunnysuny/sunnysuny.github.io/2019/01/29/安装基础环境和初测项目/">
+  <link rel="canonical" href="https://github.com/sunnysuny/sunnysuny.github.io/2019/01/31/前后端bootstrap/">
 
 
 
 
 
-  <title>安装基础环境和初测项目 | 妄越</title>
+  <title>前端 bootstrap | 妄越</title>
   
 
 
@@ -290,12 +291,12 @@
   
   
 
-  <article class="post post-type-python" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sunnysuny/sunnysuny.github.io/2019/01/29/安装基础环境和初测项目/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sunnysuny/sunnysuny.github.io/2019/01/31/前后端bootstrap/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="妄越">
@@ -312,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">安装基础环境和初测项目</h1>
+          <h1 class="post-title" itemprop="name headline">前端 bootstrap</h1>
         
 
         <div class="post-meta">
@@ -324,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T19:51:07+08:00">
-                2019-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-31T20:35:51+08:00">
+                2019-01-31
               </time>
             
 
@@ -343,8 +344,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/29/安装基础环境和初测项目/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/29/安装基础环境和初测项目/" itemprop="commentCount"></span>
+                <a href="/2019/01/31/前后端bootstrap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/31/前后端bootstrap/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,7 +367,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  517 字
+                  301 字
                 </span>
               
 
@@ -382,7 +383,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -403,34 +404,18 @@
       
 
       
-        <h2 id="镜像的准备工作"><a href="#镜像的准备工作" class="headerlink" title="镜像的准备工作"></a>镜像的准备工作</h2><ol>
-<li>apt更新源<br>修改源 vim /etc/apt/sources.list<br>更新源 apt-get update<br>升级已安装的包 apt-get upgrade<br>搜索 apt-cache search packagename<br>安装 apt-get install packagename</li>
-<li>git</li>
-<li>mysql  注意记住密码</li>
-<li>安全组放通端口</li>
-<li>修改python软连接</li>
-</ol>
-<h2 id="初步测试运行（自带单线程）"><a href="#初步测试运行（自带单线程）" class="headerlink" title="初步测试运行（自带单线程）"></a>初步测试运行（自带单线程）</h2><ol>
-<li>本地验证可运行</li>
-<li>生成依赖说明文件 pip freeze&gt; requirement.txt<br>这个命令搭配虚拟环境比较好。否则全部包都会生成。<br>可以选择<a href="https://github.com/bndr/pipreqs">pipreqs</a>包生成项目所需依赖。</li>
-<li>关闭debug模式。<br>django settings.py中debug = False</li>
-<li>设置接受的访问ip。<br>allowedhost = [*] 或 [‘127.0.0.1’, ‘localhost’, ‘.example.com’, ‘39.96.114.97’]  。host头攻击原理<a href="https://blog.csdn.net/u012397189/article/details/80559028" target="_blank" rel="noopener">https://blog.csdn.net/u012397189/article/details/80559028</a></li>
-<li>以wsgi代理项目(django2版本不需操作，默认提供)</li>
-<li>sftp上传项目</li>
-<li>安装项目依赖 cd到项目根目录下 pip3 install -r requirements.txt<br>如果服务器没有pip3的话 <code>apt install python3-pip</code>   </li>
-<li>自带单线程启动 python manage.py runserver 0.0.0.0:8000<br>这时的数据流是 外部ip→服务器上的django服务， 所以runserver 0.0.0.0。<br>如果后面请求由nginx过来，那么runserver 127.0.0.1即可。</li>
-<li>浏览器访问验证。https://域名:port 或 http://你的ip:port</li>
-</ol>
-<h2 id="其它常用软件"><a href="#其它常用软件" class="headerlink" title="其它常用软件"></a>其它常用软件</h2><ul>
-<li>apt-get install python3-pip<br>可以换pip源</li>
-<li>apt-get install nano</li>
-<li>apt-get install git<br>git生成密钥对后才能clone</li>
-<li>apt-get install mysql-server<br>默认5.7版本，需要配置字符集才能插入中文。8.1版本需要官网下载deb包然后安装。参考<a href="https://www.cnblogs.com/wusr/p/10083754.html" target="_blank" rel="noopener">https://www.cnblogs.com/wusr/p/10083754.html</a></li>
+        <h1 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h1><p>之前已经学过css。css语法属性非常多，实现麻烦，效果一般。<br>bootstrap是css封装的一套的ui框架，实现设计定义好了css样式，通过class方便引入。<br>只需了解部分bootstrap class，就能开发出漂亮的前端界面，网上也有大量的模板直接修改。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>版本选择</p>
+<ul>
+<li>生产环境  去除空格的bs代码    bootstrap.min.css（生产）</li>
+<li>源码    包含源码、bootstrap.min.css、bootstrap.css（学习）<br>解压网站上下载源码压缩包，less 一种编程语言，写好后编译成css，浏览器才能解释。dist（distribution）文件夹，这个名字的文件夹下放的是编译好的css。</li>
+<li>CDN   内容分发，在线引用bootstrap.css。（生产、学习）</li>
+<li>sass less bower npm  不需要了解，前端圈的东西，跟源代码编译和前端框架有关。<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2>新出了v4.0  但v3.3版本仍占市场大多数。<br>vue等前端框架目前更火，但是上手简单、市场很多机遇bs的项目。<br>有利于后端写出漂亮框架和为vue ui框架打下基础。</li>
 </ul>
-<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><ol>
-<li>安装依赖是。一些包的安装方式与win不同。看安装到哪个包时报错。<br>cairocffi 需要gcc编译，参考上面链接安装。<br>mysqlclient包需要加载mysqlconfig。需要先安装mysql。<br>pywin不需要。<br>先手动去除requirements.txt项目中不需要的包</li>
-<li>apt-get install python3-pip 后显示安装成功但无法使用pip3命令/usr/bin下没有。解决apt-get remove 卸载后重装。</li>
-</ol>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li>项目本地引用</li>
+<li>CDN    节省服务器流量。</li>
+</ul>
 
       
     </div>
@@ -470,6 +455,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
 
       
       
@@ -479,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/29/域名购买/" rel="next" title="域名购买">
-                <i class="fa fa-chevron-left"></i> 域名购买
+              <a href="/2019/01/29/安装基础环境和初测项目/" rel="next" title="安装基础环境和初测项目">
+                <i class="fa fa-chevron-left"></i> 安装基础环境和初测项目
               </a>
             
           </div>
@@ -489,8 +480,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/31/前后端bootstrap/" rel="prev" title="前端 bootstrap">
-                前端 bootstrap <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/15/前后端开发环境准备/" rel="prev" title="前后端开发环境准备">
+                前后端开发环境准备 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -682,7 +673,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像的准备工作"><span class="nav-number">1.</span> <span class="nav-text">镜像的准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初步测试运行（自带单线程）"><span class="nav-number">2.</span> <span class="nav-text">初步测试运行（自带单线程）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它常用软件"><span class="nav-number">3.</span> <span class="nav-text">其它常用软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报错"><span class="nav-number">4.</span> <span class="nav-text">报错</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bootstrap"><span class="nav-number">1.</span> <span class="nav-text">bootstrap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">1.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现状"><span class="nav-number">1.2.</span> <span class="nav-text">现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">1.3.</span> <span class="nav-text">引用</span></a></li></ol></li></ol></div>
             
 
           </div>
