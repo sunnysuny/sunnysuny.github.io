@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[两种方法上传到github]]></title>
+    <url>%2F2019%2F02%2F15%2Fgithub%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%2F</url>
+    <content type="text"><![CDATA[easy方法上传本地文件到github github在线上传文件夹在线上传也可以上传完整的文件夹结构，直接拖拽到上传文件页面的框中即可。 1.1点击上传文件 点击上传1.2 直接拖拽直接拖拽即可上传文件夹及文件夹里面的文件。如果点击 choose your files 就只能上传单个文件。 直接拖拽 二： 命令行上传git initgit add .git commit -m “first commit”git remote add origingit remote add origin+仓库地址git push -u origin master -f]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux虚拟机]]></title>
     <url>%2F2019%2F02%2F15%2Flinux%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[Vmware主要特点：1.不需要分区域或重新开机能在同一台pc上使用两种以上的操作系统2.本机系统可以与虚拟机系统网络通信3.可以设定并且随时修改虚拟机操作系统的硬件系统 新建虚拟机→硬件设置→使用技巧（拍照，克隆） linux系统安装1.区分类型2.格式化3.根目录是linux 最高目录4.挂载 linux 注意事项1.严格区分大小写2.所有内容以文件方式保存3.不靠扩展名区分文件类型]]></content>
