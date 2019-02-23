@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="python,">
 
 
 
@@ -78,17 +78,18 @@
 
 
 
-<meta name="description" content="最喜欢的作家： 刘同最喜欢的歌手： 杰伦 Eason最喜欢的嘻哈歌手： jony j最喜欢的颜色： 蓝白相间最喜欢的电影： 陪安东尼度过漫长岁月最喜欢歌曲： 晴天最讨厌的水果： 草莓 Emm 和草莓相关都不喜欢最想做的事： 希望自己将来有一个稳定的工作且坐着自己喜欢的事情以及自己公众号/微博的粉丝可以破万             希望可以去外国溜一趟 希望自己可以见见RM的所有人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://github.com/sunnysuny/sunnysuny.github.io/about/index.html">
+<meta name="description" content="事实上，不仅仅是Linux内核，几乎所有的 现代操作系统 都没有为支持100Gb/s做好准备。 这是一个变革的年代，现代操作系统 已经不再 现代！ 我们回望一下类似Unix/Linux，Windows NT这些操作系统是如何被称作 现代 的。嗯，是因为虚拟内存系统。 是 隔离的地址空间 让操作系统一下子进入了现代社会。在此之前，操作系统都是谭浩强书里写的那种一旦操作空指针就会系统崩溃的系统。 自打">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux内核为大规模支持100Gbs网卡准备好了吗？">
+<meta property="og:url" content="https://github.com/sunnysuny/sunnysuny.github.io/2019/02/23/tags/index.html">
 <meta property="og:site_name" content="妄越">
-<meta property="og:description" content="最喜欢的作家： 刘同最喜欢的歌手： 杰伦 Eason最喜欢的嘻哈歌手： jony j最喜欢的颜色： 蓝白相间最喜欢的电影： 陪安东尼度过漫长岁月最喜欢歌曲： 晴天最讨厌的水果： 草莓 Emm 和草莓相关都不喜欢最想做的事： 希望自己将来有一个稳定的工作且坐着自己喜欢的事情以及自己公众号/微博的粉丝可以破万             希望可以去外国溜一趟 希望自己可以见见RM的所有人">
+<meta property="og:description" content="事实上，不仅仅是Linux内核，几乎所有的 现代操作系统 都没有为支持100Gb/s做好准备。 这是一个变革的年代，现代操作系统 已经不再 现代！ 我们回望一下类似Unix/Linux，Windows NT这些操作系统是如何被称作 现代 的。嗯，是因为虚拟内存系统。 是 隔离的地址空间 让操作系统一下子进入了现代社会。在此之前，操作系统都是谭浩强书里写的那种一旦操作空指针就会系统崩溃的系统。 自打">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-21T14:22:03.992Z">
+<meta property="og:updated_time" content="2019-02-23T13:23:31.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="最喜欢的作家： 刘同最喜欢的歌手： 杰伦 Eason最喜欢的嘻哈歌手： jony j最喜欢的颜色： 蓝白相间最喜欢的电影： 陪安东尼度过漫长岁月最喜欢歌曲： 晴天最讨厌的水果： 草莓 Emm 和草莓相关都不喜欢最想做的事： 希望自己将来有一个稳定的工作且坐着自己喜欢的事情以及自己公众号/微博的粉丝可以破万             希望可以去外国溜一趟 希望自己可以见见RM的所有人">
+<meta name="twitter:title" content="Linux内核为大规模支持100Gbs网卡准备好了吗？">
+<meta name="twitter:description" content="事实上，不仅仅是Linux内核，几乎所有的 现代操作系统 都没有为支持100Gb/s做好准备。 这是一个变革的年代，现代操作系统 已经不再 现代！ 我们回望一下类似Unix/Linux，Windows NT这些操作系统是如何被称作 现代 的。嗯，是因为虚拟内存系统。 是 隔离的地址空间 让操作系统一下子进入了现代社会。在此之前，操作系统都是谭浩强书里写的那种一旦操作空指针就会系统崩溃的系统。 自打">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/sunnysuny/sunnysuny.github.io/about/">
+  <link rel="canonical" href="https://github.com/sunnysuny/sunnysuny.github.io/2019/02/23/tags/">
 
 
 
 
 
-  <title>about | 妄越</title>
+  <title>Linux内核为大规模支持100Gbs网卡准备好了吗？ | 妄越</title>
   
 
 
@@ -283,36 +284,238 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sunnysuny/sunnysuny.github.io/2019/02/23/tags/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="妄越">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yifenga.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="妄越">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <hr>
-<p>最喜欢的作家： 刘同<br>最喜欢的歌手： 杰伦 Eason<br>最喜欢的嘻哈歌手： jony j<br>最喜欢的颜色： 蓝白相间<br>最喜欢的电影： 陪安东尼度过漫长岁月<br>最喜欢歌曲： 晴天<br>最讨厌的水果： 草莓 Emm 和草莓相关都不喜欢<br>最想做的事： 希望自己将来有一个稳定的工作且坐着自己喜欢的事情以及自己公众号/微博的粉丝可以破万<br>             希望可以去外国溜一趟 希望自己可以见见RM的所有人<br>             希望可以多见见自己想见的人</p>
-<hr>
-
+          <h1 class="post-title" itemprop="name headline">Linux内核为大规模支持100Gbs网卡准备好了吗？</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T21:21:23+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/23/tags/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/23/tags/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,453 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>事实上，不仅仅是Linux内核，几乎所有的 现代操作系统 都没有为支持100Gb/s做好准备。</p>
+<p>这是一个变革的年代，现代操作系统 已经不再 现代！</p>
+<p>我们回望一下类似Unix/Linux，Windows NT这些操作系统是如何被称作 现代 的。嗯，是因为虚拟内存系统。</p>
+<p>是 隔离的地址空间 让操作系统一下子进入了现代社会。在此之前，操作系统都是谭浩强书里写的那种一旦操作空指针就会系统崩溃的系统。</p>
+<p>自打操作系统成为现代操作系统后，貌似它就没有再有过突破性的进化，但是其周边，确实翻天覆地了。</p>
+<p>先看CPU和系统架构，先是其主频的疯涨，然后又是多核架构。主频增加这个对于操作系统内核来讲是好事，在单位时间内能多执行很多指令，这完全是一个打鸡血的过程。然而多核心架构就让几乎所有的操作系统内核有点开始吃力应对了。其对数据同步的解法中，往往都是见招拆招地加锁。</p>
+<p>多核心架构对系统性能的作用力和主频增加的作用力方向是相反的，如果主频的增加让CPU在单位时间执行了更多的指令，那么多核之间的沟通成本抵消了这个主频提升带来的收益，因为同步成本是高昂的。</p>
+<p>多核心架构重演了 人月神话。</p>
+<p>最后的结果就是，支持SMP多核架构的操作系统内核，其实就是给当年引入虚拟内存时的现代操作系统全部挂满了枷锁而已。单就操作系统内核本身而言，它更慢了，而不是更快了！</p>
+<p>意思是说，多核心架构下，单独的CPU上，操作系统的执行效率要比单核架构下操作系统的执行效率更低了！核数越多，沟通同步成本越大，最终让性能/核心数曲线上凸！</p>
+<p>而沟通同步的方式，无外乎就是，锁！</p>
+<p>所以说，锁是阻止操作系统性能多核扩展性伸缩性的罪魁祸首！</p>
+<p>事实上，Linux内核也好，UNIX也好，Windows NT也好，根本就不是为多核心架构而设计的，它们只是 简单适应了SMP而已。</p>
+<p>操作系统虽然是现代的， 但是却不是当代的！ (我记得上小学和初中那会儿，老师说过现代和当代的区别)</p>
+<p>在现代操作系统发展停滞不前的时候，硬件却没有闲着。</p>
+<p>100Gb/s网卡的意思是说， 如果有100Gb的数据在缓冲区里，它可以在1秒中把它们全部发送出去。但问题是， 操作系统有能力在1秒钟内准备好100Gb的数据吗？</p>
+<p>我们知道，在我们对操作系统的传统认知中，数据的源头来自于用户态缓冲区，经由操作系统内核协议栈，将数据怼到网卡缓存区。我们可以简单测算一下，操作系统的内核协议栈有没有能力1秒钟往网卡怼100Gbit的数据。</p>
+<p>这里有几个简单的统计数据统计点，获取这些数据的方法：</p>
+<p>在tcp_write_xmit函数的while循环里打点，看看发送一个skb需要多久；<br>使用pktgen类似的机制，测算单包发送延时。<br>在如今常见的1Gb/s的网卡上发包测算，平均约4微秒发送一个Full Mss的包，貌似Linux内核对于千兆网卡应对的还不错，但这并不意味着它应对10Gb/s，40Gb/s，100Gb/s这些发送速率时，是可以线性扩展的！</p>
+<p>简单反算，100Gb/s需要单包发送延时在120纳秒以内，我们只需要测算一下120纳秒够不够内核协议栈处理一个数据包就可以了。</p>
+<p>纳秒，这是一个cache级别的时间，如果发生了一次cache命中，至少可以节省20到30纳秒的时间，但是反过来如果很不幸cache missing了，那么就要在120纳秒中扣除20到30纳秒，这样就剩下90纳秒了。</p>
+<p>该重头戏了：</p>
+<p>一次spinlock需要20纳秒左右的时间；<br>一次内存分配需要大概60纳秒的时间；<br>很不幸，没有时间剩下来了。以上的测算还是基于64字节的小包，丝毫没有包括真正的处理开销！而我们知道，协议栈处理过程中，有超级多的协议逻辑…120纳秒远远不够！</p>
+<p>在协议栈处理数据包并发送的过程中，内存分配和内存操作将会引入巨大的延时，这十有八九又会牵扯到cache missing！</p>
+<p>从另一个角度看，Linux内核作为一个通用操作系统内核，显然并没有针对单独的特性做极端的性能优化，这个意义上，我不是说它没有为大规模支持100Gb/s网卡做好准备，而是它可能根本就没有准备在支持这种高速网卡的竞赛中取得胜利！这方面你可以和David Miller交流一下，看看在他看来，代码的可维护性，简洁性，统一处理这些和极端的性能优势相比，哪个更重要。</p>
+<p>不过，无论如何，Linux内核，Windows NT之类的OS内核在多核心架构下无法线性扩展，这确实是阻碍其从 现代操作系统 进化到 当代操作系统 的路易十六！</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>让我们一起愉快的玩耍吧！love&peace</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin1.jpg" alt="妄越 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/23/部署vue/" rel="next" title="部署vue">
+                <i class="fa fa-chevron-left"></i> 部署vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/23/Linux内核为大规模支持100Gbs网卡准备好了吗/" rel="prev" title="tags">
+                tags <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
